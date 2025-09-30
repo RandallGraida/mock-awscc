@@ -1,4 +1,4 @@
-import { headerData } from "./data.js"
+import { headerData } from "./data/headerData.js"
 
 export function header() {
   let headerHTML = '';
@@ -19,4 +19,3 @@ export function header() {
   })
   document.querySelector('.jsHeaderContainer').innerHTML = headerHTML;
 } 
-
