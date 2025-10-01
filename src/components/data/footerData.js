@@ -6,13 +6,13 @@ export const footerData = [{
   awsccHistory: 'AWSCC History',
   departments: 'Departments',
   offices: 'Offices',
-  alfImage: '../public/alf.png',
+  alfImage: './public/alf.png',
   contactInformation: {
     facebook: 'https://www.facebook.com/AWSCloudClubPUP',
     linkedIn: 'https://www.linkedin.com/company/awscc-pup/posts/?feedView=all',
     instagram: 'https://www.instagram.com/awscc_pup/',
-    linkedInIcon: '../public/linkedInIcon.png',
-    facebookIcon: '../public/facebookIcon.png',
-    instagramIcon: '../public/instagramIcon.webp'
+    linkedInIcon: './public/linkedInIcon.png',
+    facebookIcon: './public/facebookIcon.png',
+    instagramIcon: './public/instagramIcon.webp'
   }
 }];
