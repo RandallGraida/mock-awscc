@@ -11,6 +11,8 @@ export function header() {
       <div class="headerInformation jsHeaderInformation">
         <p class="headerInformationParagraph">${headerData.whyUs}</p>
         <p class="headerInformationParagraph">${headerData.whoWeAre}</p>
+        <p class="headerInformationParagraph">${headerData.events}</p>
+        <p class="headerInformationParagraph">${headerData.careers}</p>
       </div>
       <div class="mockHeaderInformation jsMockHeaderInformation">
         <i class="fa fa-search"></i>

@@ -18,7 +18,6 @@
   backdrop-filter: blur(4px);
 }
 
-/* Container pieces */
 .awsccLogoContainer {
   display:flex;
   align-items:center;
@@ -36,7 +35,6 @@
   -webkit-user-drag: none;
 }
 
-/* Center nav / header information (p elements from header.js) */
 .headerInformation,
 .headerInformation {
   display:flex;
@@ -46,9 +44,8 @@
   text-align:center;
 }
 
-/* Make the <p> elements look like top-nav text links */
 .headerInformation p {
-  position: relative; /* <-- This is the crucial addition */
+  position: relative; 
   margin: 0;
   padding:8px 6px 8px 25px; 
   color: var(--muted);
@@ -61,13 +58,12 @@
   text-decoration: none;
 }
 
-/* Hover / focus states */
 .headerInformation p::after {
   content: "";
   position: absolute;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   left: 0;
-  bottom: -2px; /* A small negative value can prevent it from overlapping text */
+  bottom: -2px; 
   width: 0;
   height: 2px;
   background-color: white; 
@@ -81,7 +77,6 @@
 
 }
 
-/* Right area: search / mock (Font Awesome may supply the icon; if not, fallback to emoji) */
 .mockHeaderInformation,
 .mockHeaderInformation.jsMockHeaderInformation {
   display:flex;
@@ -91,13 +86,11 @@
   padding-right:500px;
 }
 
-/* If font-awesome icon exists inside, keep it visible and style */
 .mockHeaderInformation .fa {
   color: var(--muted);
   font-size: 18px;
 }
 
-/* Fallback icon via pseudo-element if FA is not loaded (ensures visible control) */
 .mockHeaderInformation::before {
   display:inline-block;
   font-size:18px;
@@ -106,13 +99,11 @@
   margin-right:4px;
 }
 
-/* Make the right area keyboard accessible look */
 .mockHeaderInformation,
 .mockHeaderInformation * {
   cursor:pointer;
 }
 
-/* ---------- Small mobile tweaks ---------- */
 @media (max-width: 479px) {
   :root { 
     --header-height-mobile: 56px; 
@@ -126,27 +117,29 @@
     gap:8px; 
   }
 
-  /* Make center nav minimal: hide text to create Accenture-like minimal header on mobile */
   .headerInformation {
     display:flex;
     gap:8px;
     justify-content:center;
     overflow:hidden;
   }
-  /* Hide nav labels on very small screens to match the floating compact header style */
+
   .headerInformation p {
-    display:none;  /* hide center nav on smallest screens */
+    display:none; 
   }
 
-  /* Make logo slightly larger for presence */
   .awsccLogo { 
     max-height: var(--logo-max-h-mobile); 
   }
 
-  /* Right controls: keep visible */
   .mockHeaderInformation::before { 
     font-size:18px; 
   }
+}
+
+.contactUs {
+  color: orange;
+  font-weight: 500;
 }
 
 /* ---------- Tablet (>=768px) ---------- */
@@ -178,7 +171,6 @@
     gap: var(--nav-gap-tablet); 
   }
 
-  /* Show search & optionally locale text (if present) */
   .mockHeaderInformation::before { 
     font-size:22px; color:var(--muted); 
   }
@@ -197,7 +189,7 @@
     height: var(--header-height-desktop);
     padding: 12px 34px;
     gap: var(--gap);
-    grid-template-columns: 200px 1fr 180px; /* more control on wide screens */
+    grid-template-columns: 200px 1fr 180px; 
   }
 
   .awsccLogoContainer { 
@@ -208,7 +200,6 @@
     max-height: var(--logo-max-h-desktop); 
   }
 
-  /* Center nav: show and space out like Accenture */
   .headerInformation { 
     justify-content:center; 
     gap: var(--nav-gap-desktop); 
@@ -219,14 +210,12 @@
     padding:10px 50px; 
   }
 
-  /* Right area: align items to right and allow inline "country" text if header.js injects it */
   .mockHeaderInformation { 
     justify-content:flex-end; 
     gap:12px; 
     padding-right:12px; 
   }
 
-  /* If header injects small globe/locale text, style it */
   .mockHeaderInformation span, .mockHeaderInformation .locale {
     color: var(--muted);
     font-size:22px;
@@ -234,7 +223,6 @@
   }
 }
 
-/* ---------- Accessibility: visible focus indicator ---------- */
 .headerInformation p:focus-visible,
 .mockHeaderInformation:focus-visible,
 .awsccLogo:focus-visible {
@@ -243,7 +231,6 @@
   border-radius: 4px;
 }
 
-/* ---------- Small utility: keep header content aligned even with long logos ---------- */
 .awsccLogoContainer img { 
   display:block; 
   max-width:100%; 

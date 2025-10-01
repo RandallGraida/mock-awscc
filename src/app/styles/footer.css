@@ -1,37 +1,156 @@
-a {
-  color: white
+:root {
+  --bg: #000;
+  --text: #fff;
+  --muted: #9CA3AF;
+  --accent: #fff;
+  --maxWidth: 1400px;
+  --gutter: 2rem;
 }
 
-p {
-  color: white;
-}
-
-.footerNav {
-  position: relative;
-  display: inline-block;
-  color: white; 
-  text-decoration: none; /* remove default underline */
-  font-size: 18px;
-  padding-bottom: 4px; 
-}
-
-/* Create hidden underline */
-.footerNav::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: white; 
-  transition: width 0.3s ease-in-out;
-}
-
-/* Animate underline on hover */
-.footerNav:hover::after {
+.footerContainer {
   width: 100%;
+  background: var(--bg);
+  color: var(--text);
+  box-sizing: border-box;
+}
+
+.footerInner {
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+  padding: 4rem 1rem;           
+  display: grid;
+  grid-template-columns: 1fr;   
+  gap: 2rem;
+  align-items: start;
+  box-sizing: border-box;
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.itsAlwaysDayOneText {
+  margin: 0;
+  padding: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 0.01em;
+  line-height: 1.04;
+  font-size: clamp(1.75rem, 5.2vw, 3.75rem);
+  white-space: normal;
 }
 
 .footerDataContainer {
-  color: white;
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.footerColumn {
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.footerLink {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color .15s ease;
+  display: inline-block;
+}
+.footerLink:hover,
+.footerLink:focus {
+  color: var(--accent);
+  outline: none;
+}
+
+.footerLink.strong {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.footerLegal p {
+  color: var(--muted);
+  margin: 2rem 0 0 0;
+  font-size: 0.95rem;
+}
+
+.footerMedia {
+  width: 100%;
+  display: block;
+  align-self: center;
+  justify-self: center;
+  box-sizing: border-box;
+}
+
+.footerMedia img {
+  width: 100%;
+  height: auto;
+  max-width: 560px; 
+  object-fit: contain;
+  display: block;
+  margin-left: auto; 
+  border-radius: 0;
+}
+
+.contactInformationIcon {
+  width: 50px;
+  height: 50px;
+}
+
+@media (min-width: 768px) {
+  .footerInner {
+    grid-template-columns: 1fr 1fr; 
+    gap: 2.5rem;
+    padding: 5rem 2rem;
+    align-items: center;
+  }
+
+  .footerMedia img {
+    max-width: 640px;
+  }
+
+  .itsAlwaysDayOneText {
+    font-size: clamp(2rem, 4.5vw, 4.25rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footerInner {
+    padding: 6rem 3rem;
+    grid-template-columns: 1fr 1fr; 
+    align-items: start;
+  }
+
+  .footerContent {
+    padding-left: 4rem;
+    padding-right: 1rem;
+  }
+
+  .footerMedia {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .footerMedia img {
+    max-width: 760px; 
+    height: auto;
+    object-fit: cover;
+  }
+
+  .footerLegal p { font-size: 0.9rem; }
+}
+
+@media (max-width: 479px) {
+  .footerInner { padding: 2.25rem 1rem; }
+  .footerColumn { min-width: 140px; }
+  .itsAlwaysDayOneText { font-size: clamp(1.6rem, 7vw, 2.25rem); }
 }

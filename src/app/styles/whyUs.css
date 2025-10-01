@@ -93,26 +93,50 @@
 
 /* Mobile */
 @media (max-width: 1023px) {
+  /* Force parent off the grid to allow inline-block layout */
   .whyUsInner {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "content"
-      "media";
-    padding: 0 1rem; 
+    display: block !important;   /* override grid */
+    font-size: 0;                /* remove inline-block whitespace */
+    text-align: left;
+    margin: 0 auto;
+    gap: 0;                      /* grid gap not used for inline-block approach */
+    padding: 0 1rem;             /* keep small side padding on mobile */
+    box-sizing: border-box;
+  }
+
+  /* Make children inline-block and take ~50% width each (account for margins) */
+  .whyUsInner > * {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    font-size: initial;                /* restore readable font-size on children */
+    width: calc(50% - 0.5rem);         /* two per row, adjust for horizontal spacing */
+    margin: 0 0.5rem 1rem 0;           /* right margin creates horizontal gap */
+    max-width: calc(50% - 0.5rem);
+  }
+
+  .whyUsInner > *:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  .whyUsInner > *:nth-child(3) {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    display: block;    
   }
 
   .whyUsMedia {
     height: auto;
   }
-
   .whyUsMedia img {
+    width: 100%;
     height: auto;
     object-fit: contain;
   }
 }
 
 .whyUsTitle {
-  color:indigo;
+  color: indigo;
   font-weight: 500;
-  font-size: 32px;
-}
+} 
