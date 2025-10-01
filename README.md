@@ -30,7 +30,7 @@ You can view the live site here:
 ## 📂 Project Structure
 ```
 src/
-└── app/
+├
 ├── styles/
 │ ├── footer.css
 │ ├── header.css
@@ -50,7 +50,13 @@ src/
 │ └── whyUs.js
 │
 ├── data/
-│
+├ ├── footerData.js
+│ ├── headerData.js
+├ ├── heroData.js
+├ ├── upcomingEventData.js
+├ ├── whoAreWeData.js
+├ ├── whyUsData.js
+├ 
 ├── index.html
 └── main.css
 
