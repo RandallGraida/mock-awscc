@@ -28,6 +28,7 @@ You can view the live site here:
 ---
 
 ## 📂 Project Structure
+```
 src/
 └── app/
 ├── styles/
@@ -59,3 +60,4 @@ public/
 ├── test.html
 └── test.js
 └── (images etc...)
+```
