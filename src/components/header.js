@@ -9,8 +9,8 @@ export function header() {
         <img class="awsccLogo" src="${headerData.imageId}">
       </div>
       <div class="headerInformation jsHeaderInformation">
-        <p>${headerData.whyUs}</p>
-        <p>${headerData.whoWeAre}</p>
+        <p class="headerInformationParagraph">${headerData.whyUs}</p>
+        <p class="headerInformationParagraph">${headerData.whoWeAre}</p>
       </div>
       <div class="mockHeaderInformation jsMockHeaderInformation">
         <i class="fa fa-search"></i>

@@ -1,3 +1,15 @@
+* { box-sizing: border-box; }
+html,body { 
+  height:100%;
+   margin:0; 
+   padding:0; 
+   color:#fff; background:var(--bg); }
+
+/* Add top padding so fixed header won't cover content */
+body {
+  padding-top: var(--header-height-mobile);
+}
+
 /*Mobile*/
 body {
   background-color:black

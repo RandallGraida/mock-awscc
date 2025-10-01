@@ -2,11 +2,10 @@ export const whoWeAreData = [{
   whoAreWe: `Who are we`,
   awscc: 'AWS Cloud Club - PUP Manila',
   awsccWhoWeAre: `A distinctive and university-wide organization, 
-    focusing on the impact of cloud technology to the community, based at the Polytechnic University of 
-    the Philippines (PUP).`,
+    focusing on the impact of cloud technology to the community.`,
   whoWeAreImage: '../public/whoWeAre.webp',
   whatWeBelieve: 'What we believe',
-  valuesToLiveBy: 'Value to live by',
+  valuesToLiveBy: 'Values to live by',
   values: `To foster a community of passionate learners leveraging AWS, 
     and creating opportunities for students to give back and effect meaningful
     change.`,

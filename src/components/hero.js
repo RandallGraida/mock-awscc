@@ -4,12 +4,15 @@ export function hero() {
   let heroHTML = '';
   
   heroData.forEach(heroData => {
+    // Add span around "Always" if it's not already in the data
+    const formattedText = heroData.itsAlwaysDayOne.replace(
+      'Always', 
+      '<span class="accent-violet">Always</span>'
+    );
+    
     heroHTML +=  `
       <div class="itsAlwaysDayOneHeroContainer">
-        <p class="itsAlwaysDayOneHero">${heroData.itsAlwaysDayOne}</p>
-      </div>
-      <div class="heroTaglineContainer">
-        <p class="heroTagline">${heroData.heroTagline}</p>
+        <p class="itsAlwaysDayOneHero">${formattedText}</p>
       </div>
     `;
   });

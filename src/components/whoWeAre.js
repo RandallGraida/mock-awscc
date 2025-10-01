@@ -5,27 +5,44 @@ export function whoWeAre() {
 
   whoWeAreData.forEach(whoWeAreData => {
     whoWeAreHTML += `
-      <div class="whoAreWeSubContainer">
-        <div>
-          <p>${whoWeAreData.whoAreWe}</p>
-          <p>${whoWeAreData.awscc}</p>
-          <p>${whoWeAreData.awsccWhoWeAre}</p>
+      <section class="feature-section feature-section-wrap" aria-label="Who we are">
+        <div class="feature-container">
+          <div class="feature-grid">
+            <div class="feature-inner">
+              <div class="feature-content">
+                <p class="feature-kicker">${whoWeAreData.whoAreWe}</p>
+                <h3 class="feature-title">${whoWeAreData.awscc}</h3>
+                <p class="feature-desc">${whoWeAreData.awsccWhoWeAre}</p>
+              </div>
+
+              <div class="feature-media" aria-hidden="false">
+                <img src="${whoWeAreData.whoWeAreImage}" alt="${whoWeAreData.whoAreWe}" />
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <img src="${whoWeAreData.whoWeAreImage}"
-        </div>   
-      </div>
-      <div class="whatWeBelieveContainer">
-        <div>
-          <p>${whoWeAreData.whatWeBelieve}</p>
-          <p>${whoWeAreData.valuesToLiveBy}</p>
-          <p>${whoWeAreData.values}</p>
+      </section>
+    `;
+
+    whoWeAreHTML += `
+      <section class="feature-section feature-section-wrap" aria-label="What we believe">
+        <div class="feature-container">
+          <div class="feature-grid">
+            <div class="feature-inner">
+              <div class="feature-content">
+                <p class="feature-kicker">${whoWeAreData.whatWeBelieve}</p>
+                <h3 class="feature-title">${whoWeAreData.valuesToLiveBy}</h3>
+                <p class="feature-desc">${whoWeAreData.values}</p>
+              </div>
+
+              <div class="feature-media" aria-hidden="false">
+                <img src="${whoWeAreData.whatWeBelieveImage}" alt="${whoWeAreData.whatWeBelieve}" />
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <img src="${whoWeAreData.whatWeBelieveImage}"
-        </div>
-      </div>
-    ` 
+      </section>
+    `;
   });
   document.querySelector('.jsWhoWeAreContainer').innerHTML = whoWeAreHTML;
 }

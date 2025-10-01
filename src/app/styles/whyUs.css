@@ -1,1 +1,118 @@
-whyUsContainer
+/* General section styling */
+.whyUsSection {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 0 2rem 0; 
+  box-sizing: border-box;
+}
+
+.whyUsInner {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "content"
+    "media";
+  gap: 1.25rem;
+  align-items: start;
+  max-width: 100%;
+  margin: 0 auto;   
+}
+
+.whyUsContent { 
+  grid-area: content; 
+}
+
+.whyUsMedia { 
+  grid-area: media; 
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: block;
+  align-self: stretch;
+  height: 30vh;  
+}
+
+.whyUsMedia img {
+  display: block;
+  width: 100%;
+  height: 100%; 
+  object-fit: contain;         
+  object-position: center;
+  background-color: black;   
+  border-radius: 12px;
+}
+
+/* Desktop styling */
+@media (min-width: 1024px) {
+  .whyUsInner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    grid-auto-rows: 1fr;           
+    grid-template-areas: "content media";
+    align-items: stretch;  
+    padding-left: 33.33%;   
+    padding-right: 33.33%;  
+    max-width: 100%;        
+    box-sizing: border-box;
+  }
+
+  .whyUsInner > * { 
+    min-height: 0; 
+  }
+
+  .whyUsContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    padding-right: 1rem;
+    box-sizing: border-box;
+  }
+
+  .whyUsMedia {
+    display: block;
+    width: 100%;
+    height: 20vh;  
+    min-height: 0;
+    box-sizing: border-box;
+  }
+
+  .whyUsMedia img {
+    width: 100%;
+    height: 100%;            
+    object-fit: contain;     
+  }
+}
+
+/* Reverse for desktop */
+@media (min-width: 1024px) {
+  .whyUsSection.reverse .feature-inner {
+    grid-template-areas: "media content";
+  }
+}
+
+/* Mobile */
+@media (max-width: 1023px) {
+  .whyUsInner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "content"
+      "media";
+    padding: 0 1rem; 
+  }
+
+  .whyUsMedia {
+    height: auto;
+  }
+
+  .whyUsMedia img {
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+.whyUsTitle {
+  color:indigo;
+  font-weight: 500;
+  font-size: 32px;
+}
